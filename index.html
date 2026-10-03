@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="nav">
+        <h2>MA</h2>
+        <div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div id="theme-toggle">
+            <i class="fa-regular fa-lightbulb theme-light-icon" ></i>
+            <i class="fa-solid fa-lightbulb theme-dark-icon"></i>
+        </div>
+    </div>
+
+    <!-- Hero section -->
+    <section class="hero-section">
+        <div class="terminal">
+            <div class="terminal-bar">
+                <span class="dot dot-orange"></span>
+                <span class="dot dot-indigo"></span>
+                <span class="dot dot-cyan"></span>
+                <span class="terminal-title">mubarak@portfolio: ~</span>
+            </div>
+            <div class="terminal-body" id="terminal-body" aria-live="off"></div>
+        </div>
+        <div>
+            b
+        </div>
+    </section>
+    <!-- Hero section end -->
+
+    <!-- try section -->
+    <section class="try-section">
+        <p>Try:</p>
+        <button class="trybtn active" data-target="projects">projects</button>
+        <button class="trybtn" data-target="about">about</button>
+        <button class="trybtn" data-target="skills">skills</button>
+        <button class="trybtn" data-target="contact">contact</button>
+    </section>
+
+    <section id="projects" class="panel show projects-section">
+        <div class="projects-content">
+            <p class="section-label">01 / Projects</p>
+            <h2>Selected work</h2>
+
+            <div class="project-grid">
+                <article class="card featured">
+                    <div class="card-shot">[ screenshot ]</div>
+                    <h3>Trading Journal</h3>
+                    <p>A Python command-line journal to log trades and review performance.</p>
+                    <div class="card-footer">
+                        <div class="tags"><span>Python</span><span>CLI</span></div>
+                        <a href="#">View case study →</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-shot">[ screenshot ]</div>
+                    <h3>Weather App</h3>
+                    <p>Live forecasts by city.</p>
+                    <small>JavaScript · API</small>
+                </article>
+
+                <article class="card">
+                    <div class="card-shot">[ screenshot ]</div>
+                    <h3>Palindrome Package</h3>
+                    <p>A tested, installable Python package.</p>
+                    <small>Python · Packaging</small>
+                </article>
+
+                <article class="card wide">
+                    <div class="card-shot">[ screenshot ]</div>
+                    <h3>To-do List &amp; Digital Clock</h3>
+                    <p>DOM practice projects with local saving.</p>
+                    <small>HTML · CSS · JavaScript</small>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- about -->
+     <section id="about" class="panel show about-section">
+        <div class="projects-content">
+            <p class="section-label">02 / About</p>
+            <h2>A few things about me</h2>
+            <p class="tag">I teach myself to build things that work, then make them look good, one project at a time. </p>
+            <p>
+                I'm Mubarak, a self-taught developer based in Lagos. I started with Python through Harvard's CS50P, then picked up JavaScript to build for the web. I learn by shipping small projects, like a command-line trading journal and an installable Python package, and I'm now working towards a trading bot that can analyse and trade crypto and forex.
+            </p>
+
+    </section>
+     <!-- end of about -->
+    <!-- try section end -->
+
+
+
+
+    
+    <script src="./script/app.js"></script>
+</body>
+</html>
