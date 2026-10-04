@@ -7,6 +7,7 @@
     <script>
         document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +64,9 @@
 
             <div class="project-grid">
                 <article class="card featured">
-                    <div class="card-shot">[ screenshot ]</div>
+                    <div class="card-shot">
+                        <img src="./images/dash.PNG" alt="trading-journal">
+                    </div>
                     <h3>Trading Journal</h3>
                     <p>A Python command-line journal to log trades and review performance.</p>
                     <div class="card-footer">
@@ -73,22 +76,28 @@
                 </article>
 
                 <article class="card">
-                    <div class="card-shot">[ screenshot ]</div>
+                    <div class="card-shot">
+                        <img src="./images/wheather.PNG" alt="">
+                    </div>
                     <h3>Weather App</h3>
                     <p>Live forecasts by city.</p>
                     <small>JavaScript · API</small>
                 </article>
 
                 <article class="card">
-                    <div class="card-shot">[ screenshot ]</div>
-                    <h3>Palindrome Package</h3>
-                    <p>A tested, installable Python package.</p>
-                    <small>Python · Packaging</small>
+                    <div class="card-shot">
+                        <img src="./images/texttospeach.PNG" alt="">
+                    </div>
+                    <h3>Text to Speech</h3>
+                    <p>Convert text to speech using the Web Speech API.</p>
+                    <small>JavaScript · API</small>
                 </article>
 
                 <article class="card wide">
-                    <div class="card-shot">[ screenshot ]</div>
-                    <h3>To-do List &amp; Digital Clock</h3>
+                    <div class="card-shot">
+                        <img src="./images/clock.PNG" alt="clock">
+                    </div>
+                    <h3>Digital Clock</h3>
                     <p>DOM practice projects with local saving.</p>
                     <small>HTML · CSS · JavaScript</small>
                 </article>
@@ -107,7 +116,34 @@
             </p>
 
     </section>
-     <!-- end of about -->
+    <!-- end of about -->
+   
+    <!-- skill section -->
+     <section id="skills" class="panel show skills-section">
+        <div>
+            <p class="section-label">03 / Skills</p>
+  
+                <div class="skill-pills">
+                    <span class="skill"><i class="devicon-python-plain colored"></i> 
+                        <p>Python</p>
+                    </span>
+                    <span class="skill"><i class="devicon-javascript-plain colored"></i>    <p>JavaScript</p>
+                    </span>
+                    <span class="skill"><i class="devicon-html5-plain colored"></i>        <p>HTML</p>
+                    </span>
+                    <span class="skill"><i class="devicon-css3-plain colored"></i>
+                        <p> CSS</p>
+                    </span>
+                    <span class="skill">
+                        <i class="devicon-git-plain colored"></i>
+                        <p>Git</p>
+                    </span>
+                </div>  
+
+        </div>
+
+    </section>  
+    <!-- skill section end -->
     <!-- try section end -->
 
 
