@@ -4,10 +4,16 @@
     --font-mono: 'JetBrains Mono', monospace;
     --bg: #ffffff;
     --text: #000000;
+     --ok: #059669;
+    --info: #0891b2;
+    --next: #ea580c;
 }
 :root[data-theme="dark"] {
     --bg: #2c2c2c;
     --text: #ffffff;
+     --ok: #34d399;
+    --info: #22d3ee;
+    --next: #fb923c;
 }
 body {
     background-color: var(--bg);
@@ -324,22 +330,87 @@ body {
 /* end of about section */
 
 /* skills section */
-.skill-pills { 
-    display: flex; 
-    flex-wrap: wrap; 
+.skills-content {
+    max-width: 1100px;
+    /* margin: 0 auto; */
+    /* padding: 56px 24px; */
+}
+
+.skill-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.skill-group {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+}
+.skill-group.next {
+    border-style: dashed;     
+}
+
+.group-title {
+    margin: 0 0 16px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.group-title::before { margin-right: 8px; }
+.group-title.daily    { color: var(--ok); }
+.group-title.daily::before    { content: "●"; }
+.group-title.learning { color: var(--info); }
+.group-title.learning::before { content: "●"; }
+.group-title.upcoming { color: var(--next); }
+.group-title.upcoming::before { content: "○"; }
+
+.skill-pills {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .skill {
-    display: block;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    border: 1px solid var(--text);
-    border-radius: 15px;
-    padding: 8px 18px;
+    gap: 10px;
+    padding: 8px 18px 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
     font-size: 16px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
-.skill i { 
-    font-size: 22px; 
+.skill:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+.skill i { font-size: 22px; line-height: 1; }
+
+.next .skill { border-style: dashed; }
+
+/* dark logos follow your theme colour so they never disappear */
+.devicon-github-original,
+.devicon-linux-plain {
+    color: var(--text);
 }
 
+/* pop-in when the panel opens */
+.panel.show .skill {
+    animation: pop 0.4s ease both;
+    animation-delay: calc(var(--i, 0) * 60ms);
+}
+@keyframes pop {
+    from { opacity: 0; transform: translateY(10px) scale(0.95); }
+    to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skill { transition: none; }
+    .panel.show .skill { animation: none; }
+}

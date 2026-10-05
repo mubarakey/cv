@@ -120,4 +120,9 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.6 });
 
 counters.forEach(c => observer.observe(c));
+document.querySelectorAll('.skill-pills').forEach(group => {
+    group.querySelectorAll('.skill').forEach((skill, i) => {
+        skill.style.setProperty('--i', i);
+    });
+});
 

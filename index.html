@@ -108,7 +108,7 @@
     <!-- about -->
      <section id="about" class="panel show about-section">
         <div class="about-content">
-            <p class="section-label">01 / About</p>
+            <p class="section-label">02 / About</p>
             <h2 class="section-title">A few things about me</h2>
 
             <div class="about-grid">
@@ -157,27 +157,44 @@
    
     <!-- skill section -->
      <section id="skills" class="panel show skills-section">
-        <div>
+       <section class="skills-content" aria-labelledby="skills-title">
             <p class="section-label">03 / Skills</p>
-  
-                <div class="skill-pills">
-                    <span class="skill"><i class="devicon-python-plain colored"></i> 
-                        <p>Python</p>
-                    </span>
-                    <span class="skill"><i class="devicon-javascript-plain colored"></i>    <p>JavaScript</p>
-                    </span>
-                    <span class="skill"><i class="devicon-html5-plain colored"></i>        <p>HTML</p>
-                    </span>
-                    <span class="skill"><i class="devicon-css3-plain colored"></i>
-                        <p> CSS</p>
-                    </span>
-                    <span class="skill">
-                        <i class="devicon-git-plain colored"></i>
-                        <p>Git</p>
-                    </span>
-                </div>  
+            <h2 class="section-title" id="skills-title">What I work with</h2>
 
-        </div>
+            <div class="skill-groups">
+
+                <div class="skill-group">
+                    <h3 class="group-title daily">Using daily</h3>
+                    <ul class="skill-pills">
+                        <li class="skill"><i class="devicon-python-plain colored"></i><span>Python</span></li>
+                        <li class="skill"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></li>
+                        <li class="skill"><i class="devicon-html5-plain colored"></i><span>HTML</span></li>
+                        <li class="skill"><i class="devicon-css3-plain colored"></i><span>CSS</span></li>
+                        <li class="skill"><i class="devicon-git-plain colored"></i><span>Git</span></li>
+                        <li class="skill"><i class="devicon-github-original"></i><span>GitHub</span></li>
+                        <li class="skill"><i class="devicon-linux-plain"></i><span>Linux</span></li>
+                        <li class="skill"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="group-title learning">Learning now</h3>
+                    <ul class="skill-pills">
+                        <li class="skill"><i class="fa-solid fa-box-open"></i><span>Python packaging</span></li>
+                        <li class="skill"><i class="devicon-pytest-plain colored"></i><span>Testing</span></li>
+                    </ul>
+                </div>
+
+                <div class="skill-group next">
+                    <h3 class="group-title upcoming">Next up</h3>
+                    <ul class="skill-pills">
+                        <li class="skill"><i class="fa-solid fa-chart-line"></i><span>Trading APIs</span></li>
+                        <li class="skill"><i class="fa-solid fa-robot"></i><span>Trading bot</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
 
     </section>  
     <!-- skill section end -->
