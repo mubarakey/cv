@@ -91,3 +91,33 @@ tryBtns.forEach(btn => {
 showPanel('projects');
 // end of try section buttons
 
+// about journey count
+const counters = document.querySelectorAll('.stat-number');
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function countUp(el) {
+    const target = +el.dataset.count;
+    const suffix = el.dataset.suffix || '';
+    if (reduceMotion) { el.textContent = target + suffix; return; }
+
+    const duration = 1200;
+    const start = performance.now();
+    function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        el.textContent = Math.round(target * progress) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+}
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            countUp(entry.target);
+            observer.unobserve(entry.target);   // run once only
+        }
+    });
+}, { threshold: 0.6 });
+
+counters.forEach(c => observer.observe(c));
+
