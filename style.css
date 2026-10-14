@@ -135,7 +135,7 @@ body {
 
 /* project content */
 .projects-content {
-    padding: 56px 24px;
+    /* padding: 56px 24px; */
 }
 .project-grid {
     display: grid;
@@ -229,7 +229,7 @@ body {
 /* about section */
 .about-content {
     max-width: 1100px;
-    padding: 56px 24px;
+    /* padding: 56px 24px; */
 }
 
 .section-label {
@@ -340,7 +340,7 @@ body {
 .skills-content {
     max-width: 1100px;
     /* margin: 0 auto; */
-    padding: 56px 24px;
+    /* padding: 56px 24px; */
 }
 
 .skill-groups {
@@ -426,7 +426,7 @@ body {
 .contact-content {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 24px;
+    /* padding: 56px 24px; */
 }
 .contact-grid {
     display: grid;
