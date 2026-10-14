@@ -126,3 +126,103 @@ document.querySelectorAll('.skill-pills').forEach(group => {
     });
 });
 
+
+// ---------- contact: live Lagos time ----------
+const timeEl = document.getElementById('lagos-time');
+const timeFmt = new Intl.DateTimeFormat('en-GB', {
+    hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Lagos'
+});
+function updateTime() { timeEl.textContent = timeFmt.format(new Date()) + ' local time'; }
+updateTime();
+setInterval(updateTime, 30000);
+
+// ---------- contact: copy email ----------
+const copyBtn = document.getElementById('copy-email');
+copyBtn.addEventListener('click', async () => {
+    const email = document.getElementById('email-link').textContent.trim();
+    try {
+        await navigator.clipboard.writeText(email);
+        copyBtn.textContent = 'Copied!';
+    } catch {
+        copyBtn.textContent = 'Copy failed';
+    }
+    setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+});
+
+// ---------- contact: form ----------
+const form = document.getElementById('contact-form');
+const sendBtn = document.getElementById('send-btn');
+const statusEl = document.getElementById('form-status');
+const ACCESS_KEY = '9f4b6250-3b83-4a62-8aba-c3ddfdc8fe2e';
+
+const nameInput = document.getElementById('c-name');
+const emailInput = document.getElementById('c-email');
+const messageInput = document.getElementById('c-message');
+const fields = [nameInput, emailInput, messageInput];
+
+const rules = {
+    name:    v => v.trim().length >= 2 || 'Please enter your name',
+    email:   v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || 'Please enter a valid email',
+    message: v => v.trim().length >= 10 || 'Message should be at least 10 characters',
+};
+
+function validateField(input) {
+    const result = rules[input.name](input.value);
+    const ok = result === true;
+    input.closest('.field').querySelector('.error').textContent = ok ? '' : result;
+    input.classList.toggle('invalid', !ok);
+    input.setAttribute('aria-invalid', String(!ok));
+    return ok;
+}
+
+function setStatus(text, type) {
+    statusEl.textContent = text;
+    statusEl.className = 'form-status' + (type ? ' ' + type : '');
+}
+
+fields.forEach(f => {
+    f.addEventListener('blur', () => validateField(f));
+    f.addEventListener('input', () => {
+        if (f.classList.contains('invalid')) validateField(f);   // clears the error as soon as it's fixed
+    });
+});
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    setStatus('', '');
+
+    const results = fields.map(validateField);       // runs on all fields so every error shows
+    if (!results.every(Boolean)) {
+        fields.find(f => f.classList.contains('invalid')).focus();
+        return;
+    }
+    if (form.elements.botcheck.checked) return;      // a bot filled the hidden box
+
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Sending…';
+
+    try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({
+                access_key: ACCESS_KEY,
+                subject: 'New message from your portfolio',
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim(),
+                message: messageInput.value.trim(),
+            }),
+        });
+        const data = await res.json();
+        if (!res.ok || !data.success) throw new Error(data.message || 'Request failed');
+
+        form.reset();
+        fields.forEach(f => f.setAttribute('aria-invalid', 'false'));
+        setStatus('Thanks! Your message was sent. I will reply soon.', 'success');
+    } catch (err) {
+        setStatus('Something went wrong. Please try again, or email me directly.', 'is-error');
+    } finally {
+        sendBtn.disabled = false;
+        sendBtn.textContent = 'Send message';
+    }
+});

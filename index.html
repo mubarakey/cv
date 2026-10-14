@@ -42,9 +42,6 @@
             </div>
             <div class="terminal-body" id="terminal-body" aria-live="off"></div>
         </div>
-        <div>
-            b
-        </div>
     </section>
     <!-- Hero section end -->
 
@@ -198,6 +195,83 @@
 
     </section>  
     <!-- skill section end -->
+
+    <!-- contact section -->
+    <section id="contact" class="panel contact-section" aria-labelledby="contact-title">
+        <div class="contact-content">
+            <p class="section-label">04 / Contact</p>
+            <h2 class="section-title" id="contact-title">Get in touch</h2>
+
+            <div class="contact-grid">
+
+                <!-- left: info -->
+                <div class="contact-info">
+                    <p class="contact-intro">
+                        Have a project in mind or just want to say hello? Feel free to reach out!
+                    </p>
+
+                    <ul class="contact-methods">
+                        <li class="method">
+                            <span class="method-icon"><i class="fa-solid fa-envelope"></i></span>
+                            <div class="method-text">
+                                <span class="method-label">Email</span>
+                                <a href="mailto:iammubarak69@gmail.com" id="email-link">iammubarak69@gmail.com</a>
+                            </div>
+                            <button type="button" class="copy-btn" id="copy-email" aria-label="Copy email address">Copy</button>
+                        </li>
+                        <li class="method">
+                            <span class="method-icon"><i class="fa-solid fa-phone"></i></span>
+                            <div class="method-text">
+                                <span class="method-label">Phone</span>
+                                <a href="tel:+2348071645634">+234 807 164 5634</a>
+                            </div>
+                        </li>
+                        <li class="method">
+                            <span class="method-icon"><i class="fa-solid fa-location-dot"></i></span>
+                            <div class="method-text">
+                                <span class="method-label">Based in</span>
+                                <span>Lagos, Nigeria · <span id="lagos-time"></span></span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="socials">
+                        <a href="https://github.com/mubarakey" aria-label="GitHub" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com/in/YOUR-USERNAME" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://x.com/YOUR-USERNAME" aria-label="X" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- right: form -->
+                <form id="contact-form" class="contact-form" novalidate>
+                    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <div class="field">
+                        <label for="c-name">Name</label>
+                        <input id="c-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+                        <p class="error"></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="c-email">Email</label>
+                        <input id="c-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required>
+                        <p class="error"></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="c-message">Message</label>
+                        <textarea id="c-message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
+                        <p class="error"></p>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="send-btn">Send message</button>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                </form>
+
+            </div>
+        </div>
+    </section>
+     <!-- contact section end -->
     <!-- try section end -->
 
 
