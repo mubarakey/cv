@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mubarak Abdulkareem | Developer Portfolio</title>
+    <meta name="description" content="Mubarak Abdulkareem is a self-taught developer in Lagos building with Python and JavaScript.">
     <script>
         document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.classList.add('js');
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -15,106 +17,192 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="nav">
-        <h2>MA</h2>
-        <div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        <div id="theme-toggle">
-            <i class="fa-regular fa-lightbulb theme-light-icon" ></i>
-            <i class="fa-solid fa-lightbulb theme-dark-icon"></i>
-        </div>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Hero section -->
-    <section class="hero-section">
-        <div class="terminal">
-            <div class="terminal-bar">
-                <span class="dot dot-orange"></span>
-                <span class="dot dot-indigo"></span>
-                <span class="dot dot-cyan"></span>
-                <span class="terminal-title">mubarak@portfolio: ~</span>
+    <!-- Navbar -->
+    <header class="nav">
+        <div class="nav-inner container">
+            <a href="#home" class="logo" aria-label="Mubarak Abdulkareem, home">
+                <span class="logo-mark">MA</span>
+                <span class="logo-text">mubarak@portfolio</span>
+            </a>
+
+            <nav aria-label="Main">
+                <ul class="nav-links">
+                    <span class="nav-pill" aria-hidden="true"></span>
+                    <li><a href="#home" class="active" aria-current="true">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" id="theme-toggle" class="icon-btn" aria-label="Switch to dark theme" aria-pressed="false">
+                    <i class="fa-solid fa-sun theme-icon theme-icon-sun" aria-hidden="true"></i>
+                    <i class="fa-solid fa-moon theme-icon theme-icon-moon" aria-hidden="true"></i>
+                </button>
+                <a href="#contact" class="btn btn-primary btn-sm nav-cta">Let's talk</a>
             </div>
-            <div class="terminal-body" id="terminal-body" aria-live="off"></div>
         </div>
-    </section>
-    <!-- Hero section end -->
+        <div class="nav-progress" aria-hidden="true"></div>
+    </header>
 
-    <!-- try section -->
-    <section class="try-section">
-        <p>Try:</p>
-        <button class="trybtn active" data-target="projects">projects</button>
-        <button class="trybtn" data-target="about">about</button>
-        <button class="trybtn" data-target="skills">skills</button>
-        <button class="trybtn" data-target="contact">contact</button>
-    </section>
+    <main id="main">
 
-    <section id="projects" class="panel show projects-section">
-        <div class="projects-content">
-            <p class="section-label">01 / Projects</p>
-            <h2>Selected work</h2>
+        <!-- Hero -->
+        <section id="home" class="hero container" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="status-chip"><span class="status-dot" aria-hidden="true"></span>Now learning: Python packaging &amp; testing</p>
 
-            <div class="project-grid">
-                <article class="card featured">
-                    <div class="card-shot">
-                        <img src="./images/dash.PNG" alt="trading-journal">
+                <h1 id="hero-title" class="hero-title">
+                    <span class="w" style="--i:0">I</span>
+                    <span class="w" style="--i:1">build</span>
+                    <span class="w" style="--i:2">things</span>
+                    <span class="w" style="--i:3">that</span>
+                    <span class="w" style="--i:4">work,</span>
+                    <span class="w" style="--i:5">then</span>
+                    <span class="w" style="--i:6">make</span>
+                    <span class="w" style="--i:7">them</span>
+                    <span class="hl"><span class="w" style="--i:8">look</span> <span class="w" style="--i:9">good.</span></span>
+                </h1>
+
+                <p class="hero-text">
+                    Mubarak Abdulkareem, a self-taught developer in Lagos. Python first, then JavaScript
+                    for the web. Now working towards a bot that can analyse and trade crypto and forex.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View projects <span aria-hidden="true">→</span></a>
+                    <a href="#contact" class="btn btn-ghost">Get in touch</a>
+                </div>
+
+                <ul class="hero-stats">
+                    <li class="chip-stat tint-sky"><span class="stat-number" data-count="3" data-suffix="+">3+</span><span class="stat-label">projects</span></li>
+                    <li class="chip-stat tint-pink"><span class="stat-number" data-count="2" data-suffix="+">2+</span><span class="stat-label">years learning</span></li>
+                    <li class="chip-stat tint-mint"><span class="stat-number" data-count="10" data-suffix="+">10+</span><span class="stat-label">tools</span></li>
+                </ul>
+            </div>
+
+            <div class="hero-visual">
+                <span class="shape shape-sun" aria-hidden="true"></span>
+                <span class="shape shape-block" aria-hidden="true"></span>
+
+                <div class="terminal">
+                    <div class="terminal-bar">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                        <span class="terminal-title">mubarak@portfolio: ~</span>
                     </div>
+                    <div class="terminal-body" id="terminal-body" aria-live="off"></div>
+                    <div class="terminal-chips" role="group" aria-label="Terminal shortcuts">
+                        <span>try:</span>
+                        <button type="button" class="chip-btn" data-cmd="projects">projects</button>
+                        <button type="button" class="chip-btn" data-cmd="about">about</button>
+                        <button type="button" class="chip-btn" data-cmd="skills">skills</button>
+                        <button type="button" class="chip-btn" data-cmd="contact">contact</button>
+                    </div>
+                </div>
+
+                <span class="float-chip float-chip-py"><span class="float-dot" style="background:#19C3A0"></span>Python</span>
+                <span class="float-chip float-chip-js"><span class="float-dot" style="background:#FFB020"></span>JavaScript</span>
+            </div>
+        </section>
+
+        <!-- Ticker -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <ul>
+                    <li>Python</li><li>/</li><li>JavaScript</li><li>/</li><li>HTML</li><li>/</li><li>CSS</li><li>/</li><li>Git</li><li>/</li><li>GitHub</li><li>/</li><li>Linux</li><li>/</li><li>VS Code</li><li>/</li>
+                </ul>
+                <ul>
+                    <li>Python</li><li>/</li><li>JavaScript</li><li>/</li><li>HTML</li><li>/</li><li>CSS</li><li>/</li><li>Git</li><li>/</li><li>GitHub</li><li>/</li><li>Linux</li><li>/</li><li>VS Code</li><li>/</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <section id="projects" class="section container" aria-labelledby="projects-title">
+            <div class="section-head">
+                <div>
+                    <p class="section-label">01 / Projects</p>
+                    <h2 id="projects-title" class="section-title">Selected <span class="hl-word">work</span></h2>
+                </div>
+                <div class="filters" role="group" aria-label="Filter projects">
+                    <span class="filter-count" id="project-count" aria-live="polite">5 projects</span>
+                    <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" class="filter-btn" data-filter="python" aria-pressed="false">Python</button>
+                    <button type="button" class="filter-btn" data-filter="javascript" aria-pressed="false">JavaScript</button>
+                    <button type="button" class="filter-btn" data-filter="api" aria-pressed="false">API</button>
+                </div>
+            </div>
+
+            <div class="project-grid" id="project-grid" data-stagger>
+                <article class="card featured reveal tint-lav" data-tags="python">
+                    <div class="card-shot"><img src="./images/dash.PNG" alt="Trading Journal screenshot"></div>
                     <h3>Trading Journal</h3>
                     <p>A Python command-line journal to log trades and review performance.</p>
-                    <div class="card-footer">
-                        <div class="tags"><span>Python</span><span>CLI</span></div>
-                        <a href="#">View case study →</a>
+                    <div class="card-foot">
+                        <ul class="tags"><li>Python</li><li>CLI</li></ul>
+                        <button type="button" class="card-open">View case study <span aria-hidden="true">→</span></button>
                     </div>
                 </article>
 
-                <article class="card">
-                    <div class="card-shot">
-                        <img src="./images/wheather.PNG" alt="">
-                    </div>
+                <article class="card reveal tint-sky" data-tags="javascript api">
+                    <div class="card-shot"><img src="./images/wheather.PNG" alt="Weather App screenshot" loading="lazy"></div>
                     <h3>Weather App</h3>
                     <p>Live forecasts by city.</p>
-                    <small>JavaScript · API</small>
+                    <div class="card-foot">
+                        <ul class="tags"><li>JavaScript</li><li>API</li></ul>
+                        <button type="button" class="card-open">View project <span aria-hidden="true">→</span></button>
+                    </div>
                 </article>
 
-                <article class="card">
-                    <div class="card-shot">
-                        <img src="./images/texttospeach.PNG" alt="">
-                    </div>
+                <article class="card reveal tint-pink" data-tags="javascript api">
+                    <div class="card-shot"><img src="./images/texttospeach.PNG" alt="Text to Speech screenshot" loading="lazy"></div>
                     <h3>Text to Speech</h3>
                     <p>Convert text to speech using the Web Speech API.</p>
-                    <small>JavaScript · API</small>
+                    <div class="card-foot">
+                        <ul class="tags"><li>JavaScript</li><li>API</li></ul>
+                        <button type="button" class="card-open">View project <span aria-hidden="true">→</span></button>
+                    </div>
                 </article>
 
-                <article class="card wide">
-                    <div class="card-shot">
-                        <img src="./images/clock.PNG" alt="clock">
-                    </div>
+                <article class="card reveal tint-butter" data-tags="javascript">
+                    <div class="card-shot"><img src="./images/clock.PNG" alt="Digital Clock screenshot" loading="lazy"></div>
                     <h3>Digital Clock</h3>
                     <p>DOM practice projects with local saving.</p>
-                    <small>HTML · CSS · JavaScript</small>
+                    <div class="card-foot">
+                        <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                        <button type="button" class="card-open">View project <span aria-hidden="true">→</span></button>
+                    </div>
+                </article>
+
+                <article class="card reveal tint-mint" data-tags="python">
+                    <div class="card-shot card-shot-icon"><i class="fa-solid fa-box-open" aria-hidden="true"></i></div>
+                    <h3>Palindrome Package</h3>
+                    <p>An installable Python package with tests.</p>
+                    <div class="card-foot">
+                        <ul class="tags"><li>Python</li><li>Packaging</li><li>Testing</li></ul>
+                        <button type="button" class="card-open">View project <span aria-hidden="true">→</span></button>
+                    </div>
                 </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- about -->
-     <section id="about" class="panel show about-section">
-        <div class="about-content">
+        <!-- About -->
+        <section id="about" class="section container" aria-labelledby="about-title">
             <p class="section-label">02 / About</p>
-            <h2 class="section-title">A few things about me</h2>
+            <h2 id="about-title" class="visually-hidden">A few things about me</h2>
 
             <div class="about-grid">
-                <div class="about-text">
+                <div class="about-text reveal">
                     <p class="about-statement">
                         I teach myself to build things that work,
-                        <span class="dim">then make them look good, one project at a time.</span>
+                        <span class="hl-word">then make them look good,</span> one project at a time.
                     </p>
-
                     <p class="about-body">
                         I'm Mubarak, a self-taught developer based in Lagos. I started with
                         Python through Harvard's CS50P, then picked up JavaScript to build for
@@ -124,109 +212,116 @@
                     </p>
                 </div>
 
-
+                <ul class="facts reveal" style="--d:120ms">
+                    <li><span class="fact-label">Based in</span><span>Lagos, Nigeria</span></li>
+                    <li><span class="fact-label">Started with</span><span>Harvard's CS50P</span></li>
+                    <li><span class="fact-label">Learning now</span><span>Python packaging &amp; testing</span></li>
+                    <li><span class="fact-label">Working towards</span><span>A crypto and forex trading bot</span></li>
+                </ul>
             </div>
-        </div>
-        <section class="journey" aria-labelledby="journey-title">
-            <h3 id="journey-title">My journey so far</h3>
-            <ul class="stats">
-                <li class="stat">
-                    <span class="stat-number" data-count="3" data-suffix="+">3+</span>
-                    <span class="stat-label">Projects completed</span>
-                </li>
-                <li class="stat">
-                    <span class="stat-number" data-count="2" data-suffix="+">2+</span>
-                    <span class="stat-label">Years of self-learning</span>
-                </li>
-                <li class="stat">
-                    <span class="stat-number" data-count="10" data-suffix="+">10+</span>
-                    <span class="stat-label">Tools &amp; technologies</span>
-                </li>
-                <li class="stat">
-                    <span class="stat-number" data-count="100" data-suffix="%">100%</span>
-                    <span class="stat-label">Committed to growth</span>
-                </li>
-            </ul>
+
+            <div class="journey reveal" aria-labelledby="journey-title">
+                <h3 id="journey-title" class="journey-title">My journey so far</h3>
+                <ul class="stats">
+                    <li class="stat">
+                        <span class="stat-number" data-count="3" data-suffix="+">3+</span>
+                        <span class="stat-label">Projects completed</span>
+                    </li>
+                    <li class="stat">
+                        <span class="stat-number" data-count="2" data-suffix="+">2+</span>
+                        <span class="stat-label">Years of self-learning</span>
+                    </li>
+                    <li class="stat">
+                        <span class="stat-number" data-count="10" data-suffix="+">10+</span>
+                        <span class="stat-label">Tools &amp; technologies</span>
+                    </li>
+                    <li class="stat">
+                        <span class="stat-number" data-count="100" data-suffix="%">100%</span>
+                        <span class="stat-label">Committed to growth</span>
+                    </li>
+                </ul>
+            </div>
+
+            <ol class="timeline reveal" aria-label="Learning timeline">
+                <li class="step" style="--n:0"><span class="step-dot dot-violet"></span><strong>CS50P</strong><span>Python foundations</span></li>
+                <li class="step" style="--n:1"><span class="step-dot dot-yellow"></span><strong>JavaScript</strong><span>Weather, clock, speech</span></li>
+                <li class="step" style="--n:2"><span class="step-dot dot-pink"></span><strong>Trading Journal</strong><span>Python CLI</span></li>
+                <li class="step" style="--n:3"><span class="step-dot dot-mint"></span><strong>Python package</strong><span class="step-ok">In progress</span></li>
+                <li class="step step-next" style="--n:4"><span class="step-dot dot-next"></span><strong>Trading bot</strong><span class="step-warn">Next up</span></li>
+            </ol>
         </section>
 
-    </section>
-    <!-- end of about -->
-   
-    <!-- skill section -->
-     <section id="skills" class="panel show skills-section">
-       <section class="skills-content" aria-labelledby="skills-title">
+        <!-- Skills -->
+        <section id="skills" class="section container" aria-labelledby="skills-title">
             <p class="section-label">03 / Skills</p>
-            <h2 class="section-title" id="skills-title">What I work with</h2>
+            <h2 id="skills-title" class="section-title">What I work with</h2>
 
             <div class="skill-groups">
-
-                <div class="skill-group">
+                <div class="skill-group group-daily reveal">
                     <h3 class="group-title daily">Using daily</h3>
                     <ul class="skill-pills">
-                        <li class="skill"><i class="devicon-python-plain colored"></i><span>Python</span></li>
-                        <li class="skill"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></li>
-                        <li class="skill"><i class="devicon-html5-plain colored"></i><span>HTML</span></li>
-                        <li class="skill"><i class="devicon-css3-plain colored"></i><span>CSS</span></li>
-                        <li class="skill"><i class="devicon-git-plain colored"></i><span>Git</span></li>
-                        <li class="skill"><i class="devicon-github-original"></i><span>GitHub</span></li>
-                        <li class="skill"><i class="devicon-linux-plain"></i><span>Linux</span></li>
-                        <li class="skill"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></li>
+                        <li class="skill"><span class="skill-icon tint-mint"><i class="devicon-python-plain colored"></i></span><span>Python</span></li>
+                        <li class="skill"><span class="skill-icon tint-butter"><i class="devicon-javascript-plain colored"></i></span><span>JavaScript</span></li>
+                        <li class="skill"><span class="skill-icon tint-pink"><i class="devicon-html5-plain colored"></i></span><span>HTML</span></li>
+                        <li class="skill"><span class="skill-icon tint-sky"><i class="devicon-css3-plain colored"></i></span><span>CSS</span></li>
+                        <li class="skill"><span class="skill-icon tint-pink"><i class="devicon-git-plain colored"></i></span><span>Git</span></li>
+                        <li class="skill"><span class="skill-icon tint-lav"><i class="devicon-github-original"></i></span><span>GitHub</span></li>
+                        <li class="skill"><span class="skill-icon tint-butter"><i class="devicon-linux-plain"></i></span><span>Linux</span></li>
+                        <li class="skill"><span class="skill-icon tint-sky"><i class="devicon-vscode-plain colored"></i></span><span>VS Code</span></li>
                     </ul>
                 </div>
 
-                <div class="skill-group">
-                    <h3 class="group-title learning">Learning now</h3>
-                    <ul class="skill-pills">
-                        <li class="skill"><i class="fa-solid fa-box-open"></i><span>Python packaging</span></li>
-                        <li class="skill"><i class="devicon-pytest-plain colored"></i><span>Testing</span></li>
-                    </ul>
-                </div>
+                <div class="skill-split">
+                    <div class="skill-group group-learning reveal">
+                        <h3 class="group-title learning">Learning now</h3>
+                        <ul class="skill-pills">
+                            <li class="skill"><span class="skill-icon tint-mint"><i class="fa-solid fa-box-open"></i></span><span>Python packaging</span></li>
+                            <li class="skill"><span class="skill-icon tint-butter"><i class="devicon-pytest-plain colored"></i></span><span>Testing</span></li>
+                        </ul>
+                    </div>
 
-                <div class="skill-group next">
-                    <h3 class="group-title upcoming">Next up</h3>
-                    <ul class="skill-pills">
-                        <li class="skill"><i class="fa-solid fa-chart-line"></i><span>Trading APIs</span></li>
-                        <li class="skill"><i class="fa-solid fa-robot"></i><span>Trading bot</span></li>
-                    </ul>
+                    <div class="skill-group group-next next reveal" style="--d:100ms">
+                        <h3 class="group-title upcoming">Next up</h3>
+                        <ul class="skill-pills">
+                            <li class="skill"><span class="skill-icon tint-pink"><i class="fa-solid fa-chart-line"></i></span><span>Trading APIs</span></li>
+                            <li class="skill"><span class="skill-icon tint-lav"><i class="fa-solid fa-robot"></i></span><span>Trading bot</span></li>
+                        </ul>
+                    </div>
                 </div>
-
             </div>
         </section>
 
-    </section>  
-    <!-- skill section end -->
-
-    <!-- contact section -->
-    <section id="contact" class="panel contact-section" aria-labelledby="contact-title">
-        <div class="contact-content">
+        <!-- Contact -->
+        <section id="contact" class="section container" aria-labelledby="contact-title">
             <p class="section-label">04 / Contact</p>
-            <h2 class="section-title" id="contact-title">Get in touch</h2>
+            <h2 id="contact-title" class="section-title">Get <span class="hl-word">in touch</span></h2>
 
             <div class="contact-grid">
 
-                <!-- left: info -->
-                <div class="contact-info">
+                <div class="contact-info reveal">
                     <p class="contact-intro">
                         Have a project in mind or just want to say hello? Feel free to reach out!
                     </p>
 
                     <ul class="contact-methods">
-                        <li class="method">
+                        <li class="method tint-butter">
                             <span class="method-icon"><i class="fa-solid fa-envelope"></i></span>
                             <div class="method-text">
                                 <span class="method-label">Email</span>
                                 <a href="mailto:iammubarak69@gmail.com" id="email-link">iammubarak69@gmail.com</a>
                             </div>
-                            <button type="button" class="copy-btn" id="copy-email" aria-label="Copy email address">Copy</button>
+                            <button type="button" class="copy-btn" id="copy-email" aria-label="Copy email address">
+                                <i class="fa-solid fa-check copy-check" aria-hidden="true"></i><span class="copy-label">Copy</span>
+                            </button>
                         </li>
-                        <li class="method">
+                        <li class="method tint-pink">
                             <span class="method-icon"><i class="fa-solid fa-phone"></i></span>
                             <div class="method-text">
                                 <span class="method-label">Phone</span>
                                 <a href="tel:+2348071645634">+234 807 164 5634</a>
                             </div>
                         </li>
-                        <li class="method">
+                        <li class="method tint-mint">
                             <span class="method-icon"><i class="fa-solid fa-location-dot"></i></span>
                             <div class="method-text">
                                 <span class="method-label">Based in</span>
@@ -236,48 +331,77 @@
                     </ul>
 
                     <div class="socials">
-                        <a href="https://github.com/mubarakey" aria-label="GitHub" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://linkedin.com/in/YOUR-USERNAME" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://x.com/YOUR-USERNAME" aria-label="X" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://github.com/mubarakey" class="tint-sky" aria-label="GitHub" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com/in/YOUR-USERNAME" class="tint-lav" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://x.com/YOUR-USERNAME" class="tint-butter" aria-label="X" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
 
-                <!-- right: form -->
-                <form id="contact-form" class="contact-form" novalidate>
+                <form id="contact-form" class="contact-form reveal" style="--d:120ms" novalidate>
                     <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
                     <div class="field">
+                        <input id="c-name" name="name" type="text" autocomplete="name" placeholder=" " required aria-describedby="err-name">
                         <label for="c-name">Name</label>
-                        <input id="c-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
-                        <p class="error"></p>
+                        <p class="error" id="err-name"></p>
                     </div>
 
                     <div class="field">
+                        <input id="c-email" name="email" type="email" autocomplete="email" placeholder=" " required aria-describedby="err-email">
                         <label for="c-email">Email</label>
-                        <input id="c-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required>
-                        <p class="error"></p>
+                        <p class="error" id="err-email"></p>
                     </div>
 
                     <div class="field">
+                        <textarea id="c-message" name="message" rows="5" placeholder=" " required aria-describedby="err-message"></textarea>
                         <label for="c-message">Message</label>
-                        <textarea id="c-message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
-                        <p class="error"></p>
+                        <p class="error" id="err-message"></p>
                     </div>
 
-                    <button type="submit" class="btn-primary" id="send-btn">Send message</button>
-                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary send-btn" id="send-btn" data-state="idle">
+                            <span class="spin" aria-hidden="true"></span>
+                            <i class="fa-solid fa-check send-check" aria-hidden="true"></i>
+                            <span class="send-label">Send message</span>
+                        </button>
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                    </div>
                 </form>
 
             </div>
+        </section>
+
+    </main>
+
+    <footer class="footer container">
+        <span>© <span id="year">2026</span> Mubarak Abdulkareem</span>
+        <span class="footer-note">Built by hand with HTML, CSS and JavaScript</span>
+    </footer>
+
+    <button type="button" id="to-top" class="to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Case-study drawer -->
+    <dialog id="case-dialog" class="drawer" aria-labelledby="case-title">
+        <div class="drawer-inner">
+            <div class="drawer-top">
+                <span class="drawer-eyebrow" id="case-eyebrow">Case study</span>
+                <button type="button" class="icon-btn drawer-close" id="case-close" aria-label="Close case study">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+            <h3 id="case-title" class="drawer-title"></h3>
+            <ul class="tags drawer-tags" id="case-tags"></ul>
+            <figure class="drawer-shot" id="case-shot"><img id="case-img" alt=""></figure>
+            <div id="case-body" class="drawer-body"></div>
+            <div class="drawer-actions">
+                <a href="https://github.com/mubarakey" class="btn btn-primary btn-sm" target="_blank" rel="noopener">More on GitHub</a>
+                <button type="button" class="btn btn-accent btn-sm" id="case-next">Next project →</button>
+            </div>
         </div>
-    </section>
-     <!-- contact section end -->
-    <!-- try section end -->
+    </dialog>
 
-
-
-
-    
     <script src="./script/app.js"></script>
 </body>
 </html>
