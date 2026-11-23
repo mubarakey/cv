@@ -6,31 +6,33 @@
     --font-body: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    --bg: #FFFBF2;
-    --surface: #FFFFFF;
+    /* The five colours: ink #14122B, paper #FAF8FF, violet #5B3AE0, lavender #EDE8FF, yellow #FFD23F */
+    --bg: #FAF8FF;
+    --surface: #FAF8FF;
     --ink: #14122B;
-    --muted: #3D3A63;
+    --muted: #4B4968;
     --line: #14122B;
     --shadow: #14122B;
-    --dot: #E6E0F5;
+    --dot: #EDE8FF;
 
-    --violet: #6D4AFF;
-    --on-violet: #FFFFFF;
+    --violet: #5B3AE0;
+    --on-violet: #FAF8FF;
     --yellow: #FFD23F;
     --on-yellow: #14122B;
 
     --accent-text: #5B3AE0;
-    --ok: #0B7A63;
-    --err: #C81E4A;
-    --warn: #B8470A;
-    --info: #14507F;
-    --focus: #6D4AFF;
+    --ok: #5B3AE0;
+    --err: #14122B;
+    --warn: #14122B;
+    --info: #5B3AE0;
+    --focus: #5B3AE0;
 
+    /* every card / chip uses the same lavender fill */
     --t-lav: #EDE8FF;
-    --t-sky: #CFEBFF;
-    --t-pink: #FFD3E8;
-    --t-butter: #FFF0B3;
-    --t-mint: #C9F5E8;
+    --t-sky: #EDE8FF;
+    --t-pink: #EDE8FF;
+    --t-butter: #EDE8FF;
+    --t-mint: #EDE8FF;
 
     --radius: 24px;
     --sh: 6px 6px 0 var(--shadow);
@@ -40,25 +42,25 @@
 
 :root[data-theme="dark"] {
     --bg: #14122B;
-    --surface: #1E1B3A;
-    --ink: #F4F2FF;
-    --muted: #B9B5DD;
-    --line: #7B76C4;
-    --shadow: #07061A;
+    --surface: #14122B;
+    --ink: #FAF8FF;
+    --muted: #BDB8DB;
+    --line: #EDE8FF;
+    --shadow: #5B3AE0;
     --dot: #24214A;
 
-    --accent-text: #B9A8FF;
-    --ok: #5EEAD4;
-    --err: #FF8DA8;
-    --warn: #FDBA74;
-    --info: #7DD3FC;
-    --focus: #B9A8FF;
+    --accent-text: #EDE8FF;
+    --ok: #EDE8FF;
+    --err: #FAF8FF;
+    --warn: #FAF8FF;
+    --info: #EDE8FF;
+    --focus: #FFD23F;
 
-    --t-lav: #2A2552;
-    --t-sky: #17304A;
-    --t-pink: #3A1D33;
-    --t-butter: #3A3216;
-    --t-mint: #153A33;
+    --t-lav: #24214A;
+    --t-sky: #24214A;
+    --t-pink: #24214A;
+    --t-butter: #24214A;
+    --t-mint: #24214A;
 }
 
 /* ==========================================================
@@ -280,7 +282,7 @@ button { font: inherit; color: inherit; }
     width: 10px; height: 10px;
     border-radius: 50%;
     border: 2px solid var(--line);
-    background: #19C3A0;
+    background: #5B3AE0;
     animation: pulse 2s ease-in-out infinite;
 }
 
@@ -344,7 +346,7 @@ button { font: inherit; color: inherit; }
     bottom: -40px; right: -28px;
     width: 120px; height: 120px;
     border-radius: 28px;
-    background: #FF8FC7;
+    background: #5B3AE0;
     animation: bob 7s ease-in-out -2s infinite;
 }
 
@@ -357,7 +359,7 @@ button { font: inherit; color: inherit; }
     border-radius: 18px;
     background: #14122B;
     color: #E8E6FF;
-    box-shadow: 8px 8px 0 #6D4AFF;
+    box-shadow: 8px 8px 0 #5B3AE0;
     font-family: var(--font-mono);
 }
 .terminal-bar {
@@ -370,9 +372,9 @@ button { font: inherit; color: inherit; }
     color: #A9A6D0;
 }
 .dot { width: 11px; height: 11px; border-radius: 50%; }
-.dot-red { background: #FF6B5B; }
+.dot-red { background: #EDE8FF; }
 .dot-yellow { background: #FFD23F; }
-.dot-green { background: #34D399; }
+.dot-green { background: #5B3AE0; }
 .terminal-title { margin-left: 10px; }
 
 .terminal-body {
@@ -386,10 +388,10 @@ button { font: inherit; color: inherit; }
     scrollbar-width: none;
 }
 .terminal-body::-webkit-scrollbar { display: none; }
-.t-out { color: #B9A8FF; }
-.prompt { color: #5EEAD4; }
+.t-out { color: #EDE8FF; }
+.prompt { color: #FFD23F; }
 .accent { color: #FFD23F; }
-.name { font-family: var(--font-heading); font-size: 30px; font-weight: 700; line-height: 1.3; color: #FFFFFF; }
+.name { font-family: var(--font-heading); font-size: 30px; font-weight: 700; line-height: 1.3; color: #FAF8FF; }
 .cursor {
     display: inline-block;
     width: .6em; height: 1.1em;
@@ -449,6 +451,9 @@ button { font: inherit; color: inherit; }
 .float-chip-py { top: -20px; left: 150px; }
 .float-chip-js { bottom: -24px; left: -28px; animation-delay: -2.5s; }
 .float-dot { width: 10px; height: 10px; border-radius: 50%; }
+/* override the inline dot colours in index.html */
+.float-chip-py .float-dot { background: var(--violet) !important; }
+.float-chip-js .float-dot { background: var(--yellow) !important; }
 
 /* ==========================================================
    Ticker
@@ -765,8 +770,8 @@ button { font: inherit; color: inherit; }
 }
 .dot-violet { background: var(--violet); }
 .dot-yellow { background: var(--yellow); }
-.dot-pink { background: #FF8FC7; }
-.dot-mint { background: #19C3A0; }
+.dot-pink { background: #EDE8FF; }
+.dot-mint { background: #5B3AE0; }
 .dot-next { border-style: dashed; }
 .js .step { opacity: 0; transform: scale(.85); }
 .timeline.in .step {
@@ -830,6 +835,8 @@ button { font: inherit; color: inherit; }
 .skill-icon i { font-size: 20px; line-height: 1; }
 .skill-icon .fa-solid { color: var(--ink); }
 .devicon-github-original, .devicon-linux-plain { color: var(--ink); }
+/* keep the tech logos in the palette instead of their brand colours */
+.skill-icon i.colored { color: var(--ink); }
 
 .js .skill-group:not(.in) .skill { opacity: 0; }
 .skill-group.in .skill { animation: pop .45s var(--ease) both; animation-delay: calc(var(--i, 0) * 60ms + 150ms); }
@@ -973,12 +980,12 @@ button { font: inherit; color: inherit; }
 .send-btn[data-state="sending"] .spin {
     display: inline-block;
     width: 16px; height: 16px;
-    border: 3px solid rgba(255, 255, 255, .4);
-    border-top-color: #fff;
+    border: 3px solid rgba(250, 248, 255, .4);
+    border-top-color: #FAF8FF;
     border-radius: 50%;
     animation: spin .7s linear infinite;
 }
-.send-btn[data-state="sent"] { background: #0B7A63; }
+.send-btn[data-state="sent"] { background: var(--yellow); color: var(--on-yellow); }
 .send-btn[data-state="sent"] .send-check { display: inline; animation: pop .4s var(--ease); }
 .send-btn:disabled { cursor: wait; transform: none; }
 
@@ -1033,7 +1040,7 @@ button { font: inherit; color: inherit; }
 @keyframes blink { 50% { opacity: 0; } }
 @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 @keyframes marquee { to { transform: translateX(-50%); } }
-@keyframes pulse { 50% { box-shadow: 0 0 0 5px rgba(25, 195, 160, .25); } }
+@keyframes pulse { 50% { box-shadow: 0 0 0 5px rgba(91, 58, 224, .25); } }
 @keyframes pop {
     from { opacity: 0; transform: translateY(10px) scale(.95); }
     to { opacity: 1; transform: none; }
